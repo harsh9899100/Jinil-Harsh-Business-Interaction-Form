@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Handling</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+
+<body>
+
+    <div class="form-container">
+        <form>
+            <div class="field-name">
+                <h1>Select Website type</h1>
+            </div>
+            <select id="website-type">
+                <option value="portfolio_website">Portfolio Website</option>
+                <option value="ecommerce_website">Ecommerce Website</option>
+                <option value="business_website">Business Website</option>
+                <option value="landing_page">Landing Page</option>
+                <option value="custom_web_application">Custom Web Application</option>
+            </select>
+
+            <div id="new-selection"></div>
+
+            <script>
+                // Get the website type selection box
+                const websiteTypeSelect = document.getElementById('website-type');
+
+                // Get the new selection division
+                const newSelectionDiv = document.getElementById('new-selection');
+
+                // Add a change event listener to the website type selection box
+                websiteTypeSelect.addEventListener('change', function () {
+                    // Get the selected website type
+                    const selectedWebsiteType = websiteTypeSelect.value;
+
+                    // Clear the new selection division
+                    newSelectionDiv.innerHTML = '';
+
+                    // Generate the new selection based on the selected website type
+                    switch (selectedWebsiteType) {
+
+                        case 'portfolio_website':
+                            newSelectionDiv.innerHTML += `
+              <h1 style="color: #8585ff; padding: 10px; margin: 10px 0; border-radius: 5px;">Select your best match</h1>
+              <select>
+                <option value="one_page_portfolio_website">One-page portfolio website: ₹5,000</option>
+                <option value="multi_page_portfolio_website_with_blog">Multi-page portfolio website with blog: ₹8,000</option>
+                <option value="portfolio_website_with_online_store">Portfolio website with online store: ₹15,000</option>
+                <option value="portfolio_website_with_custom_features">Portfolio website with custom features: ₹20,000</option>
+              </select>
+            `;
+                            break;
+
+                        case 'ecommerce_website':
+                            newSelectionDiv.innerHTML += `
+              <h1 style="color: #8585ff; padding: 10px; margin: 10px 0; border-radius: 5px;">Select your best match</h1>
+              <select>
+                <option value="small_ecommerce_website">Small ecommerce website with upto 25 products: ₹18,000</option>
+                <option value="medium_ecommerce_website">Medium ecommerce website with hundreds of products: ₹35,000</option>
+                <option value="large_ecommerce_website">Large ecommerce website with thousands of products: ₹45,000</option>
+                <option value="custom_ecommerce_website">Custom ecommerce website with unique features: ₹1,000,000</option>
+              </select>
+            `;
+                            break;
+
+                        case 'business_website':
+                            newSelectionDiv.innerHTML += `
+              <h1 style="color: #8585ff; padding: 10px; margin: 10px 0; border-radius: 5px;">Select your best match</h1>
+              <select>
+                <option value="small_business_website">Small business website with a 5 pages: ₹8999</option>
+                <option value="medium_business_website">Medium business website with multiple pages and blog: ₹10,999</option>
+                <option value="large_business_website">Large business website with multiple pages, blog, and online store: ₹18,999</option>
+                <option value="custom_business_website">Custom business website with unique features: ₹25,000</option>
+              </select>
+            `;
+                            break;
+
+                        case 'landing_page':
+                            newSelectionDiv.innerHTML += `
+             <h1 style="color: #8585ff; padding: 10px; margin: 10px 0; border-radius: 5px;">Select your best match</h1>
+              <select>
+                <option value="one_page_landing_page">One-page landing page for a product or service: ₹4000</option>
+                <option value="multi_page_landing_page">Multi-page landing page for a product or service: ₹5000</option>
+                <option value="landing_page_with_custom_features">Landing page with custom features: ₹6000</option>
+              </select>
+            `;
+                            break;
+
+                        case 'custom_web_application':
+                            newSelectionDiv.innerHTML += `
+              <h1 style="color: #8585ff; padding: 10px; margin: 10px 0; border-radius: 5px;">Select your best match</h1>
+              <select>
+                <option value="small_custom_web_application">Small custom web application with a few features: ₹15,999</option>
+                <option value="medium_custom_web_application">Medium custom web application with hundreds of features: ₹22,999</option>
+                <option value="large_custom_web_application">Large custom web application with thousands of features and complex functionality: ₹60,000</option>
+                <option value="custom_web_application_with_custom_features">Custom web application with unique features: ₹1,000,000</option>
+              </select>
+            `;
+                            break;
+                    }
+                });
+
+            </script>
+
+            <!-- ______________________________________________________________________________________ -->
+
+            <div class="field-name">
+                <h1>Select Extra Services</h1>
+            </div>
+
+            <div class="extra-services">
+                <label for="web_integration">Web Integration <span class="pricing">(Free for now)</span></label>
+                <input type="checkbox" name="web_integration" id="web_integration">
+            </div>
+
+            <div class="extra-services">
+                <label for="web_maintenance">Web Maintenance <span class="pricing">(Monthly: ₹1500, Yearly:
+                        ₹14000)</span> </label>
+                <input type="checkbox" name="web_maintenance" id="web_maintenance">
+            </div>
+
+            <div class="extra-services">
+                <label for="web_security">Web Security <span class="pricing">(Free for now)</span> </label>
+                <input type="checkbox" name="web_security" id="web_security">
+            </div>
+
+            <div class="extra-services">
+                <label for="web_security">Advance Web Security <span class="pricing">(₹3500)</span> </label>
+                <input type="checkbox" name="web_security" id="web_security">
+            </div>
+
+            <div class="extra-services">
+                <label for="web_performance_optimizationn">Web Performance Optimization <span
+                        class="pricing">(₹5000)</span></label>
+                <input type="checkbox" name="web_performance_optimization" id="web_performance_optimization">
+            </div>
+
+            <!-- ______________________________________________________________________________________ -->
+
+
+            <!-- ______________________________________________________________________________________ -->
+            <div class="field-name">
+                <input type="button" value="Submit your responce">
+            </div>
+
+
+        </form>
+    </div>
+
+</body>
+
+</html>
